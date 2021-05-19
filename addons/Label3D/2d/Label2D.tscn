@@ -14,3 +14,14 @@ clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 140.0
+margin_bottom = 32.0
+hint_tooltip = "Label Rect"
+border_color = Color( 0.886275, 0.666667, 0, 1 )
+border_width = 0.2
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
