@@ -15,14 +15,13 @@ flags_unshaded = true
 flags_do_not_receive_shadows = true
 params_grow = true
 params_grow_amount = 0.0
-albedo_color = Color( 0.670588, 0.113725, 0.113725, 1 )
 albedo_texture = SubResource( 2 )
 
 [node name="Label3D" type="Spatial"]
 script = ExtResource( 2 )
+meshpath = NodePath("Mesh")
 viewpath = NodePath("Viewport")
 labelpath = NodePath("Viewport/Label2D")
-meshpath = NodePath("Mesh")
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 140, 32 )
