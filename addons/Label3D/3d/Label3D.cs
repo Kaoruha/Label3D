@@ -33,6 +33,7 @@ public class Label3D : Spatial
 
     public override void _Process(float delta)
     {
+
     }
 
     private void Initialization()
@@ -40,6 +41,7 @@ public class Label3D : Spatial
         viewport = GetNode<Viewport>(viewpath);
         label2D = (Label2D)GetNode<Label2D>(labelpath);
         mesh = GetNode<MeshInstance>(meshpath);
+        SetLabelSize(new Vector2(140, 32));
         mat = (SpatialMaterial)mesh.GetActiveMaterial(0);
     }
     public Label2D GetLabel()
@@ -63,5 +65,13 @@ public class Label3D : Spatial
     public void SetMatColor(Color color)
     {
         mat.AlbedoColor = color;
+    }
+
+    public void SetLabelSize(Vector2 size)
+    {
+        label2D.SetRectSize(size);
+        viewport.Size = size;
+        mesh.Scale = new Vector3(size.x / 100, size.y / 100, 1);
+        mesh.Translation = new Vector3(size.x / 200, size.y / 200, 0);
     }
 }
