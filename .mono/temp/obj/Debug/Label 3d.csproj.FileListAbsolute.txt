@@ -1,8 +1,0 @@
-G:\godot_plugins\Label3D\.mono\temp\bin\Debug\Label 3d.dll
-G:\godot_plugins\Label3D\.mono\temp\bin\Debug\Label 3d.pdb
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.csprojAssemblyReference.cache
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.AssemblyInfoInputs.cache
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.AssemblyInfo.cs
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.csproj.CoreCompileInputs.cache
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.dll
-G:\godot_plugins\Label3D\.mono\temp\obj\Debug\Label 3d.pdb
