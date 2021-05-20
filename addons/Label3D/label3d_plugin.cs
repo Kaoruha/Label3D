@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [Tool]
-public class plugin : EditorPlugin
+public class label3d_plugin : EditorPlugin
 {
 	public override void _EnterTree()
 	{

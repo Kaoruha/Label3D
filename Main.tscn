@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://addons/Label3D/addon.cs" type="Script" id=1]
+[ext_resource path="res://addons/Label3D/label3d_addon.cs" type="Script" id=1]
 
 [node name="Main" type="Spatial"]
 
@@ -9,5 +9,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.669371 )
 
 [node name="Label3D" type="Spatial" parent="."]
 script = ExtResource( 1 )
-Text = "Label2D 123123123to 3D."
-Size = Vector2( 200, 32 )

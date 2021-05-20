@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [Tool]
-public class addon : Node
+public class label3d_addon : Node
 {
 
 	[Export]
