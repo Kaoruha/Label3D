@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [Tool]
-public class label3d_addon : Node
+public class Label3D : Node
 {
 
 	[Export]
@@ -15,7 +15,7 @@ public class label3d_addon : Node
 	[Export]
 	public Vector2 Size = new Vector2(140, 32);
 
-	private Label3D label3D;
+	private Label3DScene label3D;
 
 	private Label2D label2D;
 	private Viewport view;
@@ -23,7 +23,7 @@ public class label3d_addon : Node
 	{
 		GD.Print("Addon EnterTree");
 		PackedScene scene3d = GD.Load<PackedScene>("res://addons/label3d/3d/Label3D.tscn");
-		label3D = (Label3D)scene3d.Instance();
+		label3D = (Label3DScene)scene3d.Instance();
 		AddChild(label3D);
 		// label3D.Owner = GetTree().EditedSceneRoot;
 		GD.Print("Addon EnterTree Complete");

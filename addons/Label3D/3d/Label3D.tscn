@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/Label3D/2d/Label2D.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/Label3D/3d/Label3D.cs" type="Script" id=2]
+[ext_resource path="res://addons/Label3D/3d/Label3DScene.cs" type="Script" id=2]
 
 [sub_resource type="QuadMesh" id=1]
 

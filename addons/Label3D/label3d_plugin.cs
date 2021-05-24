@@ -8,7 +8,7 @@ public class label3d_plugin : EditorPlugin
 	{
 		// Initialization of the plugin goes here
 		// Add the new type with a name, a parent type, a script and an icon
-		Script script = GD.Load<Script>("res://addons/Label3D/label3d_addon.cs");
+		Script script = GD.Load<Script>("res://addons/Label3D/Label3D.cs");
 		Texture icon = GD.Load<Texture>("res://addons/Label3D/icon.png");
 		AddCustomType("Label3D", "Spatial", script, icon);
 	}

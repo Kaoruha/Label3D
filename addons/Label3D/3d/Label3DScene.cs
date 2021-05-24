@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [Tool]
-public class Label3D : Spatial
+public class Label3DScene : Spatial
 {
 	[Export]
 	public NodePath viewpath;
