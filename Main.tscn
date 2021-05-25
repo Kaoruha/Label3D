@@ -9,4 +9,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.669371 )
 
 [node name="Label3D" type="Spatial" parent="."]
 script = ExtResource( 1 )
-Text = "1111"

@@ -2,68 +2,20 @@ using Godot;
 using System;
 
 [Tool]
-public class Label3D : Node
+public class Label3D : Spatial
 {
-
+	// 显示文本内容
+	private String text = "Label2D to 3D";
 	[Export]
-	public string Text = "Label2D to 3D.";
-	[Export]
-	public Color FontColor = new Color(1, 1, 1, 1);
-
-	[Export]
-	public int FontSize = 12;
-	[Export]
-	public Vector2 Size = new Vector2(140, 32);
-
-	private Label3DScene label3D;
-
-	private Label2D label2D;
-	private Viewport view;
-	public override void _EnterTree()
+	public String Text
 	{
-		GD.Print("Addon EnterTree");
-		PackedScene scene3d = GD.Load<PackedScene>("res://addons/label3d/3d/Label3D.tscn");
-		label3D = (Label3DScene)scene3d.Instance();
-		AddChild(label3D);
-		// label3D.Owner = GetTree().EditedSceneRoot;
-		GD.Print("Addon EnterTree Complete");
-	}
-	public override void _Ready()
-	{
-		GD.Print("Addon Get Ready");
-		label2D = label3D.GetLabel();
-		view = label3D.GetViewPort();
-		GD.Print("Addon Get Ready Complete");
-		UpdateText();
-		UpdateFontColor();
-		UpdateFontSize();
-		GD.Print("Label Init");
-	}
-
-
-	public override void _Process(float delta)
-	{
-		if (Input.IsKeyPressed((int)KeyList.Space))
+		get { return text; }
+		set
 		{
-			Random ran = new Random();
-			int i = ran.Next(100, 999);
-			SetText(i);
-		}
-		if (Engine.EditorHint)
-		{
-			// GD.Print("Editor Mode");
-			UpdateText();
-			UpdateFontColor();
-			UpdateRectSize();
-		}
-		else
-		{
-			// GD.Print("Game Mode");
+			text = value;
+			SetText(value);
 		}
 	}
-
-
-	private String text_cache = "";
 	public void SetText(string str)
 	{
 		Text = str;
@@ -79,47 +31,62 @@ public class Label3D : Node
 		Text = f.ToString();
 		label2D.SetText(f.ToString());
 	}
-	private void UpdateText()
+
+	// 文本颜色
+
+	private Color font_color = new Color(1, 1, 1, 1);
+	[Export]
+	public Color FontColor
 	{
-		if (Text == text_cache)
+		get { return font_color; }
+		set
 		{
-			return;
+			font_color = value;
+			SetFontColor(value);
 		}
-		label2D.SetText(Text);
-		text_cache = Text;
+	}
+	private void SetFontColor(Color color)
+	{
+		label3D.SetMatColor(color);
 	}
 
-	private Color color_cache = new Color(1, 1, 1, 1);
-	private void UpdateFontColor()
+	// 文本显示大小
+
+	private Vector2 size = new Vector2(140, 32);
+	[Export]
+	public Vector2 Size
 	{
-		if (FontColor == color_cache)
+		get { return size; }
+		set
 		{
-			return;
+			size = value;
+			this.SetRectSize(value);
 		}
-		label3D.SetMatColor(FontColor);
-		color_cache = FontColor;
+	}
+	private void SetRectSize(Vector2 size_)
+	{
+		label3D.SetLabelSize(size_);
 	}
 
-	private int font_size_cache = 12;
-	private void UpdateFontSize()
+
+	private Label3DScene label3D;
+	private Label2D label2D;
+	private Viewport view;
+	public override void _EnterTree()
 	{
-		if (FontSize == font_size_cache)
-		{
-			return;
-		}
-		// label2D.SetTextSize(FontSize);
-		// TODO 修改Label的文字大小
-		font_size_cache = FontSize;
+		base._EnterTree();
+		PackedScene scene3d = GD.Load<PackedScene>("res://addons/label3d/3d/Label3DScene.tscn");
+		label3D = (Label3DScene)scene3d.Instance();
+		AddChild(label3D);
 	}
 
-	private Vector2 size_cache = new Vector2(140, 32);
-	private void UpdateRectSize()
+	public override void _Ready()
 	{
-		if (Size == size_cache)
-		{
-			return;
-		}
-		label3D.SetLabelSize(Size);
-		size_cache = Size;
+		base._Ready();
+		label2D = label3D.GetLabel();
+		view = label3D.GetViewPort();
+	}
+	public override void _Process(float delta)
+	{
 	}
 }

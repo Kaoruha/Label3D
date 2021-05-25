@@ -19,9 +19,9 @@ albedo_texture = SubResource( 2 )
 
 [node name="Label3D" type="Spatial"]
 script = ExtResource( 2 )
-meshpath = NodePath("Mesh")
 labelpath = NodePath("Viewport/Label2D")
 viewpath = NodePath("Viewport")
+meshpath = NodePath("Mesh")
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 140, 32 )
